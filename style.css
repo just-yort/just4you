@@ -1,0 +1,453 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+
+overflow-x:hidden;
+
+color:white;
+
+text-align:center;
+
+}
+
+header{
+
+padding:80px 20px;
+
+}
+
+header h1{
+
+font-size:70px;
+
+animation:fade 2s;
+
+}
+
+header p{
+
+font-size:22px;
+
+margin:20px;
+
+}
+
+button{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:40px;
+
+font-size:18px;
+
+cursor:pointer;
+
+background:white;
+
+color:#ff4d88;
+
+transition:.4s;
+
+font-weight:bold;
+
+margin:10px;
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+
+background:#ff4d88;
+
+color:white;
+
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+section{
+
+width:90%;
+
+margin:40px auto;
+
+padding:40px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(12px);
+
+border-radius:25px;
+
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-top:30px;
+    align-items:start;
+}
+
+.gallery img,
+.gallery video{
+    width:100%;
+    height:500px;          /* Same height for all */
+    object-fit:cover;      /* Crop to fit instead of stretching */
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.gallery img:hover,
+.gallery video:hover{
+    transform:scale(1.03);
+}
+
+/* Blur memories before opening */
+
+.gallery img,
+.gallery video{
+
+    filter:blur(18px);
+    transform:scale(.95);
+    opacity:.8;
+
+    transition:
+        filter .8s ease,
+        transform .8s ease,
+        opacity .8s ease;
+
+}
+
+/* Reveal */
+
+.gallery img.show,
+.gallery video.show{
+
+    filter:blur(0);
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+.letter p{
+
+font-size:20px;
+
+line-height:1.8;
+
+max-width:800px;
+
+margin:auto;
+
+}
+
+.buttons{
+
+margin:50px;
+
+}
+
+.popup{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.65);
+
+}
+
+.popup-content{
+
+background:white;
+
+color:#ff4d88;
+
+padding:50px;
+
+border-radius:25px;
+
+text-align:center;
+
+animation:zoom .5s;
+
+}
+
+.popup-content h1{
+
+font-size:50px;
+
+}
+
+.popup-content button{
+
+background:#ff4d88;
+
+color:white;
+
+}
+
+.hearts{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.hearts span{
+    position:absolute;
+    display:block;
+    font-size:25px;
+    animation:float 12s linear infinite;
+    opacity:.8;
+}
+
+@keyframes float{
+
+0%{
+    transform:translateY(110vh) scale(.5);
+    opacity:0;
+}
+
+20%{
+    opacity:1;
+}
+
+100%{
+    transform:translateY(-20vh) scale(1.2);
+    opacity:0;
+}
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-100px) translateX(0);
+
+}
+
+100%{
+
+transform:translateY(120vh) translateX(200px);
+
+}
+
+}
+
+@keyframes zoom{
+
+from{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(-50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:45px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+/* Welcome Screen */
+
+.welcome-screen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.welcome-box{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    width:350px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+.welcome-box h1{
+    color:#ff4d88;
+    margin-bottom:15px;
+}
+
+.welcome-box p{
+    color:#555;
+    margin-bottom:25px;
+}
+
+.welcome-box button{
+    margin:10px;
+}
+
+#noBtn{
+    position:relative;
+}
+/* =========================
+   Memory Lock Effect
+========================= */
+
+.memory-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.memory-card img,
+.memory-card video{
+
+    width:100%;
+    aspect-ratio:9/16;
+    object-fit:cover;
+
+    filter:blur(18px);
+
+    transition:.8s;
+
+    display:block;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:28px;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(5px);
+
+    transition:.8s;
+
+}
+
+.overlay p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+}
+
+.memory-card.show img,
+.memory-card.show video{
+
+    filter:blur(0);
+
+}
+
+.memory-card.show .overlay{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
