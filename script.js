@@ -48,15 +48,6 @@ function moveButton(){
 
 function showMemories(){
 
-    const items = document.querySelectorAll(".gallery img, .gallery video");
-
-    items.forEach(item=>{
-        item.classList.add("show");
-    });
-
-}
-function showMemories(){
-
     document.querySelectorAll(".memory-card")
         .forEach(card=>{
             card.classList.add("show");
