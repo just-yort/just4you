@@ -117,7 +117,9 @@ border-radius:25px;
 /* Blur memories before opening */
 
 .gallery img,
-.gallery video{
+.gallery video,
+.memory-card img,
+.memory-card video{
 
     filter:blur(18px);
     transform:scale(.95);
