@@ -54,3 +54,7 @@ function showMemories(){
         });
 
 }
+
+function showLetter(){
+    document.getElementById("letterBox").classList.add("show");
+}
