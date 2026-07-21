@@ -58,3 +58,17 @@ function showMemories(){
 function showLetter(){
     document.getElementById("letterBox").classList.add("show");
 }
+function giftYes(){
+
+    document.getElementById("giftAnswer").innerHTML =
+    "Nice try 👍 You should receive it first before you can see it!";
+
+}
+
+
+function giftNo(){
+
+    document.getElementById("giftAnswer").innerHTML =
+    "It's okay ❤️ I hope you get it soon.🎁";
+
+}
