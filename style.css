@@ -496,3 +496,8 @@ grid-template-columns:1fr 1fr;
     font-weight: normal;
     color: #ffffff;
 }
+.irl-gift button{
+    padding:8px 20px;
+    font-size:14px;
+    margin:5px;
+}
