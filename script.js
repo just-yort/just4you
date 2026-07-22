@@ -68,7 +68,13 @@ function giftYes(){
 
 function giftNo(){
 
-    document.getElementById("giftAnswer").innerHTML =
-    "It's okay ❤️ I hope you get it soon.🎁";
+    document.getElementById("voucherPopup").style.display = "flex";
+
+}
+
+
+function closeVoucher(){
+
+    document.getElementById("voucherPopup").style.display = "none";
 
 }
